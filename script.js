@@ -1,10 +1,5 @@
 'use strict';
 
-// console.log( document.querySelector('.message').textContent)
-// document.querySelector('.message').textContent = "Your momma"
-// document.querySelector('.score').textContent = " you suck"
-// document.querySelector('.guess').value = 25 //1 use value for input fields
-
 const secretNumber = Math.trunc(Math.random() * 20) + 1; //1 trunc removes the decimal. numbers between 1-20
 document.querySelector('.number').textContent = secretNumber;
 let score = 20;
@@ -15,18 +10,22 @@ document.querySelector('.check').addEventListener('click', function () {
   const gg = (document.querySelector('.message').textContent = '🪦 GAME OVER 🪦');
 
   // When there is no input
-  if (!guess) {
-    //1 if guess is false(empty)
+  if (!guess) { //1 if guess is false(empty)
     if (score > 1) {
       document.querySelector('.message').textContent = '⛔️ No number';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
       gg;
+      document.querySelector('.number').style.width = "70rem";
+    document.querySelector('.number').textContent = "GAME OVER! You Loose 🥲";
     }
     // When the player wins
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'You got it dude 👍';
+    document.querySelector('body').style.backgroundColor = "green" // When the player wins the game, the background color changes
+    document.querySelector('.number').style.width = "70rem";
+    document.querySelector('.number').textContent = "GAME OVER! You win🏆";
     // When the number is too high
   } else if (guess > secretNumber) {
     if (score > 1) {
@@ -36,6 +35,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       gg;
+      document.querySelector('.number').style.width = "70rem";
+      document.querySelector('.number').textContent = "GAME OVER! You Loose 🥲";
     }
     // When the number is too low
   } else if (guess < secretNumber) {
@@ -46,6 +47,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       gg;
+      document.querySelector('.number').style.width = "70rem";
+      document.querySelector('.number').textContent = "GAME OVER! You Loose 🥲";
     }
   }
 });
