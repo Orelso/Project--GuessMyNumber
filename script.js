@@ -6,9 +6,7 @@ let highScore = 0;
 /*˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯˯*/
 document.querySelector('.check').addEventListener('click', function () { //1 Find the class of .check(button) and add a function to it. When clicked if there is no number in the input, then the if triggers.
   const guess = Number(document.querySelector('.guess').value);
-  const gg = (document.querySelector('.message').textContent =
-    '🪦 GAME OVER 🪦');
-
+  const ggMessage = (document.querySelector('.message').textContent = '🪦 GAME OVER 🪦');
   // When there is no input
   if (!guess) { //1 if guess is false(empty)
     if (score > 1) {
@@ -16,8 +14,8 @@ document.querySelector('.check').addEventListener('click', function () { //1 Fin
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      gg;
-      document.querySelector('.number').style.width = '75rem';
+      ggMessage;
+      document.querySelector('.number').style.width = '70rem';
       document.querySelector('.number').textContent = 'GAME OVER!';
     }
     // When the player wins
@@ -39,7 +37,7 @@ document.querySelector('.check').addEventListener('click', function () { //1 Fin
         score--;
         document.querySelector('.score').textContent = score;
       } else {
-        gg;
+        ggMessage;
         document.querySelector('.number').style.width = '70rem';
         document.querySelector('.number').textContent = 'GAME OVER!';
       }
