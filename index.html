@@ -29,7 +29,8 @@
         </p>
       </section>
     </main>
-    <script>const pressed = []
+    <script>
+    const pressed = []
       const secretCode = 'orelso'
       
       window.addEventListener('keyup', (e) => {
@@ -39,7 +40,7 @@
           if(pressed.join('').includes(secretCode)) {
               console.log('DING DING')
               cornify_add()
-              document.querySelector('.score').textContent = 'ORELSO';
+              // document.querySelector('.number').textContent = 'ORELSO';
 
           }
           console.log(pressed);
