@@ -30,21 +30,21 @@
       </section>
     </main>
     <script>
-    const pressed = []
+      const pressed = []
       const secretCode = 'orelso'
       
       window.addEventListener('keyup', (e) => {
-          console.log(e.key)
+          console.log("There's a secret code that can give you unicorns. Can you guess the name of the coder ?", e.key)
           pressed.push(e.key)
           pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
           if(pressed.join('').includes(secretCode)) {
-              console.log('DING DING')
+              // console.log('DING DING')
               cornify_add()
               // document.querySelector('.number').textContent = 'ORELSO';
-
           }
           console.log(pressed);
-      })</script>
+      })
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
