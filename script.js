@@ -58,3 +58,5 @@ document.querySelector('.guess').addEventListener('keyup', function (event) {
     document.querySelector('.check').click();
   }
 });
+
+
